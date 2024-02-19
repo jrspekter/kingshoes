@@ -64,155 +64,60 @@
         </div>
     </section>
 
-    <section class="catalogo" id="catalogo">
-        <h2>Conheça nossos produtos</h2>
-        <div class="itens-catalogo">
-            <div>
-                <img src="img/tenis gelkayano.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Asics Gel-Kayano 30 Masculino</h3>
-                        <h4>Tamanho: 39 - 41</h4>
-                        <h4>À vista<span>R$256,41</span></h4>
-                        <h4>Cartão <span>R$269,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis olympikus.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Olympikus ESTILO 2 MASCULINO</h3>
-                        <h4>Tamanho: 39 - 41</h4>
-                        <h4>À vista<span>R$256,41</span></h4>
-                        <h4>Cartão <span>R$269,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>                   
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis nike.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Nike SB Force 58 PRM Masculino</h3>
-                        <h4>Tamanho: 39 - 41</h4>
-                        <h4>À vista<span>R$702,91</span></h4>
-                        <h4>Cartão <span>R$739,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis adidas.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Adidas Climacool Ventania</h3>
-                        <h4>Tamanho: 39 - 41</h4>
-                        <h4>À vista<span>R$569,91</span></h4>
-                        <h4>Cartão <span>R$599,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis new balance.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>New Balance 1080 v12 Feminino</h3>
-                        <h4>Tamanho: 34 - 36 - 38</h4>
-                        <h4>À vista<span>R$1.187,41</span></h4>
-                        <h4>Cartão <span>R$1.249,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis mizuno.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Mizuno Wave Stratos Feminino</h3>
-                        <h4>Tamanho: 35 - 36 - 38</h4>
-                        <h4>À vista<span>R$799,90</span></h4>
-                        <h4>Cartão <span>R$759,91</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis nike feminino.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Nike Air Max AP Feminino</h3>
-                        <h4>Tamanho: 39</h4>
-                        <h4>À vista<span>R$799,90</span></h4>
-                        <h4>Cartão <span>R$759,91</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <img src="img/tenis wilson.png" alt="">
-                <div class="info">
-                    <a href="error-page.html" target="_blank">
-                        <h3>Wilson Ace Plus Feminino</h3>
-                        <h4>Tamanho: 36 - 37</h4>
-                        <h4>À vista<span>R$265,91</span></h4>
-                        <h4>Cartão <span>R$279,90</span></h4>
-                    </a>
-                    <a class="link-a" href="error-page.html" target="_blank">
-                        <button class="pedir">Comprar agora</button>
-                    </a>
-                </div>
-            </div>
+    <main id="base">
 
-        </div>
-    </section>
-
-    <section class="contatos" id="contatos">
-        <h3>Contatos</h3>
-        <div class="contatos-secao">
-            <div>
-                <i class="bi bi-telephone"></i>
-                <span>(xx) 91234-5678</span>
+            <section class="catalogo" id="catalogo">
+                <h2>Conheça nossos produtos</h2>
+                <div class="itens-catalogo">
+                    <div v-for="product in cat">
+                        <img :src="product.photo" alt="">
+                        <div class="info">
+                            <a href="error-page.html" target="_blank">
+                                <h3>{{product.name}}</h3>
+                                <h4>{{product.size}}</h4>
+                                <h4>À vista<span>{{product.price1}}</span></h4>
+                                <h4>Cartão <span>{{product.price2}}</span></h4>
+                            </a>
+                            <a class="link-a" href="error-page.html" target="_blank">
+                                <button class="pedir">Comprar agora</button>
+                            </a>
+                        </div>
+                    </div>      
+                </div>
+        
+        </section>
+    </main>
+        <section class="contatos" id="contatos">
+            <h3>Contatos</h3>
+            <div class="contatos-secao">
+                <div>
+                    <i class="bi bi-telephone"></i>
+                    <span>(xx) 91234-5678</span>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/usek1ngdom/" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                        <span>@kingshoes</span>
+                    </a>
+                </div>
+                <div>
+                    <i class="bi bi-whatsapp"></i>
+                    <span>(xx) 91234-5678</span>
+                </div>
             </div>
-            <div>
-                <a href="https://www.instagram.com/usek1ngdom/" target="_blank">
-                    <i class="bi bi-instagram"></i>
-                    <span>@kingshoes</span>
+        </section>
+
+        <footer>
+            <h4>Dev by:</h4>
+            <div class="nome">
+                <a href="https://github.com/jrspekter" target="_blank">
+                    <i class="bi bi-github"></i>
+                    <span>jrspekter</span>
                 </a>
-            </div>
-            <div>
-                <i class="bi bi-whatsapp"></i>
-                <span>(xx) 91234-5678</span>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <h4>Dev by:</h4>
-        <div class="nome">
-            <a href="https://github.com/jrspekter" target="_blank">
-                <i class="bi bi-github"></i>
-                <span>jrspekter</span>
-            </a>
-        </div>     
-    </footer>
-
+            </div>     
+        </footer>
+        
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="script.js"></script> 
 </body>
 </html>
